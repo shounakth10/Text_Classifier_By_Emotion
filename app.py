@@ -26,10 +26,8 @@ def main():
     st.title("Text Classification by Emotions")
     menu = ["Home", "History"]
     choice = st.sidebar.selectbox("Menu", menu)
-    create_page_visited_table()
     create_emotionclf_table()
     if choice == "Home":
-        add_page_visited_details("Home", datetime.now(IST))
         st.subheader("Emotion Detection in Text")
 
         with st.form(key='emotion_clf_form'):
@@ -63,7 +61,6 @@ def main():
                 st.altair_chart(fig, use_container_width=True)
 
     elif choice == "History":
-        add_page_visited_details("History", datetime.now(IST))
         st.subheader("History")
       
         with st.expander('Emotion Classifier Metrics'):
