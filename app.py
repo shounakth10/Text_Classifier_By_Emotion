@@ -43,7 +43,7 @@ def main():
             add_prediction_details(raw_text, prediction, np.max(probability), datetime.now(IST))
 
             with col1:
-                st.success("Original Text")
+                st.header("Original Text")
                 st.write(raw_text)
 
                 st.header("Prediction")
