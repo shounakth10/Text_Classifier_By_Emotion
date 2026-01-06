@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import joblib
-from track_utils import create_page_visited_table, add_page_visited_details, view_all_page_visited_details, add_prediction_details, view_all_prediction_details, create_emotionclf_table, IST
+from track_utils import add_prediction_details, view_all_prediction_details, create_emotionclf_table, IST
 
 # Load Model
 pipe_lr = joblib.load(open("./models/emotion_classifier_pipe_lr.pkl", "rb"))
