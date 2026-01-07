@@ -19,6 +19,9 @@ def send_email_otp(receiver_email, otp):
     msg["Subject"] = "OTP Verification"
     msg["From"] = EMAIL_USER
     msg["To"] = receiver_email
+    print("EMAIL:", EMAIL_USER)
+    print("PASS:", "LOADED" if EMAIL_PASS else "NOT LOADED")
+
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(EMAIL_USER, EMAIL_PASS)
