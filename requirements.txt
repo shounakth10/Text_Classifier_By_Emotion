@@ -1,8 +1,9 @@
-numpy
+streamlit
 pandas
-seaborn
-neattext
+numpy
+altair
 plotly
 scikit-learn
 joblib
-streamlit
+requests
+python-dotenv
