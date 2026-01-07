@@ -5,7 +5,7 @@ import numpy as np
 from datetime import datetime
 import joblib
 
-from auth_utils import generate_otp, send_email_otp, send_telegram_otp
+from auth_utils import generate_otp, send_telegram_otp
 from track_utils import (
     add_prediction_details,
     view_all_prediction_details,
@@ -40,17 +40,15 @@ def login_page():
     if "otp" not in st.session_state:
         st.session_state.otp = None
         st.session_state.authenticated = False
-
-    email = st.text_input("Enter your Email")
+        
     phone = st.text_input("Enter your Phone No.")
 
     if st.button("📩 Send OTP"):
-        if email and phone:
+        if phone:
             otp = generate_otp()
             st.session_state.otp = otp
-            send_email_otp(email, otp)
             send_telegram_otp(otp)
-            st.success("OTP sent to Email & Telegram")
+            st.success("OTP sent to Telegram")
         else:
             st.error("Enter Valid  Credintials!!")
 
